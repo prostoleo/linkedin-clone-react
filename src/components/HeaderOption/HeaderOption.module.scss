@@ -1,0 +1,36 @@
+.headerOption {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	color: gray;
+
+	cursor: pointer;
+
+	&:hover {
+		color: black;
+	}
+
+	svg {
+	}
+
+	p {
+		font-size: 0.875rem;
+		font-weight: 500;
+	}
+
+	/* img {
+		display: block;
+		border-radius: 50%;
+
+		width: 40px;
+	} */
+}
+
+.headerOptionAvatar {
+	aspect-ratio: 1 / 1;
+	object-fit: contain;
+	background-color: azure;
+	width: 1.75rem !important;
+	height: 1.75rem !important;
+}

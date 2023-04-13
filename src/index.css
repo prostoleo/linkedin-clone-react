@@ -1,0 +1,11 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg-grey: #eef3f8;
+	--bg-app: #f3f2ef;
+	--clr-link: #0a66c2;
+}
