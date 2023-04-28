@@ -1,3 +1,4 @@
+import { SvgIconComponent } from '@mui/icons-material';
 import { Avatar } from '@mui/material';
 import type { FC } from 'react';
 import styles from './HeaderOption.module.scss';
@@ -5,7 +6,7 @@ import styles from './HeaderOption.module.scss';
 interface HeaderOptionProps {
 	avatar?: string;
 	title?: string;
-	Icon?: unknown;
+	Icon?: SvgIconComponent;
 }
 
 const HeaderOption: FC<HeaderOptionProps> = ({ avatar, Icon, title }) => {

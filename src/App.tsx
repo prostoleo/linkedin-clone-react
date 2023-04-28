@@ -2,6 +2,7 @@ import './app.scss';
 
 import Header from '@/components/Header/Header';
 import Sidebar from '@/components/Sidebar/Sidebar';
+import Feed from '@/components/Feed/Feed';
 
 function App() {
 	return (
@@ -14,7 +15,7 @@ function App() {
 				{/* sidebar */}
 				<Sidebar />
 				{/* feed */}
-				<div>feed</div>
+				<Feed />
 				{/* widgets */}
 				<div>widgets</div>
 			</div>

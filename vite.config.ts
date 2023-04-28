@@ -14,10 +14,13 @@ export default defineConfig({
 				'.less': {
 					syntax: 'postcss-less',
 				},
+				/* '.scss': {
+					syntax: 'postcss-scss',
+				}, */
 			},
 		}),
-		// reactRefresh(),
 		react(),
+		// reactRefresh(),
 	],
 	resolve: {
 		alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],

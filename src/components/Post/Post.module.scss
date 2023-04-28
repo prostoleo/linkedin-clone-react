@@ -1,0 +1,38 @@
+.post {
+	padding: 1em;
+	margin-bottom: 0.75em;
+
+	background-color: white;
+
+	border-radius: 0.75rem;
+
+	.postHeader {
+		display: flex;
+		align-items: center;
+
+		gap: 0.75rem;
+
+		margin-bottom: 0.75rem;
+
+		.postInfo {
+			& > p {
+				font-size: 0.75rem;
+				color: gray;
+			}
+		}
+
+		.postDate {
+			display: block;
+			margin-left: auto;
+		}
+	}
+
+	.postBody {
+		overflow-wrap: anywhere;
+	}
+
+	.postButtons {
+		display: flex;
+		justify-content: space-evenly;
+	}
+}

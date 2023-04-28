@@ -1,0 +1,23 @@
+.inputOption {
+	display: inline-flex;
+	// flex-direction: column;
+	align-items: center;
+	gap: 0.25em;
+
+	padding: 0.75em;
+	color: darkgrey;
+	cursor: pointer;
+
+	border-radius: 10px;
+
+	&:hover {
+		background-color: whitesmoke;
+	}
+
+	& > svg {
+	}
+
+	& > span {
+		font-weight: 700;
+	}
+}
