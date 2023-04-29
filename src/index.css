@@ -8,4 +8,17 @@
 	--bg-grey: #eef3f8;
 	--bg-app: #f3f2ef;
 	--clr-link: #0a66c2;
+	--clr-primary: #0074b1;
+	--clr-bg-primary: #0074b1;
+	--clr-text-primary: #0177b7;
+}
+
+input,
+textarea,
+button {
+	font-family: inherit;
+}
+
+button {
+	cursor: pointer;
 }

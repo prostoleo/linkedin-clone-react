@@ -20,7 +20,7 @@ const Header: FC<HeaderProps> = ({}) => {
 				<div className={styles.headerSearch}>
 					{/* search icon */}
 					<SearchIcon />
-					<input type="text" />
+					<input type="text" placeholder="Search.." />
 				</div>
 			</div>
 			<div className={styles.headerRight}>

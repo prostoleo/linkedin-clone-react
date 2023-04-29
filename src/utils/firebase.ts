@@ -10,6 +10,9 @@ import {
 	setDoc,
 	Timestamp,
 } from 'firebase/firestore';
+
+// import admin from 'firebase/auth/';
+// const {firebaseAdmin} = await import('@libs/firebase')
 // import { getDatabase, ref, set } from 'firebase/database';
 
 import { firestore } from '@/libs/firebase';

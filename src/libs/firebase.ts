@@ -1,6 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
+// const admin = await import('firebase-admin');
+// import admin from 'firebase-admin/';
 
 const firebaseConfig = {
 	apiKey: import.meta.env.VITE_API_KEY,
@@ -21,4 +23,12 @@ const firebaseApp = initializeApp(firebaseConfig);
 export const firestore = getFirestore(firebaseApp);
 export const auth = getAuth(firebaseApp);
 
+/* export const firebaseAdmin = () => {
+	admin.initializeApp();
+
+	return admin;
+}; */
+/* admin.initializeApp();
+
+export { admin }; */
 // export { db, auth };
