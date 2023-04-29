@@ -7,11 +7,17 @@ interface HeaderOptionProps {
 	avatar?: string;
 	title?: string;
 	Icon?: SvgIconComponent;
+	onClick?: () => void;
 }
 
-const HeaderOption: FC<HeaderOptionProps> = ({ avatar, Icon, title }) => {
+const HeaderOption: FC<HeaderOptionProps> = ({
+	avatar,
+	Icon,
+	title,
+	onClick,
+}) => {
 	return (
-		<div className={styles.headerOption}>
+		<div className={styles.headerOption} onClick={onClick}>
 			{Icon && <Icon className="icon" />}
 			{/* {avatar && <img avatar src={avatar} />} */}
 			{avatar && <Avatar className={styles.headerOptionAvatar} src={avatar} />}

@@ -8,10 +8,16 @@ import HomeIcon from '@mui/icons-material/Home';
 import HeaderOption from '../HeaderOption/HeaderOption';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { useDispatch } from 'react-redux';
+import { logout } from '@/store/user/userSlice';
+import { auth } from '@/libs/firebase';
+import useAuth from '@/hooks/useAuth';
 
 interface HeaderProps {}
 
 const Header: FC<HeaderProps> = ({}) => {
+	const { logoutOfApp } = useAuth();
+
 	return (
 		<header className={styles.header}>
 			<div className={styles.headerLeft}>
@@ -30,6 +36,7 @@ const Header: FC<HeaderProps> = ({}) => {
 				<HeaderOption Icon={ChatIcon} title="Chatting" />
 				<HeaderOption Icon={NotificationsIcon} title="Notifications" />
 				<HeaderOption
+					onClick={logoutOfApp}
 					avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpKrP0QZ1ADDz8kWV0_M6J_wlBlhQ6k_ekVg&usqp=CAU"
 					title="Me"
 				/>
