@@ -73,10 +73,6 @@ export default function useLogin() {
 		try {
 			event.preventDefault();
 
-			if (!state.fullName) {
-				return alert('please enter a full name');
-			}
-
 			if (!state.email) {
 				return alert('please enter a email');
 			}

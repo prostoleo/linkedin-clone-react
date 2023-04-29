@@ -1,7 +1,13 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit';
+import { iLocalUser } from '@/hooks/useAuth';
+import {
+	createSlice,
+	createSelector,
+	createDraftSafeSelector,
+} from '@reduxjs/toolkit';
+// import { UserCredential } from 'firebase/auth';
 
 interface iUserState {
-	user: null | unknown;
+	user: null | iLocalUser;
 }
 
 export const userSlice = createSlice({
@@ -41,9 +47,9 @@ export const { login, logout } = userSlice.actions;
 // export const selectUser = (state) => state.user.value;
 export const selectSelf = (state: iUserState) => state;
 
-export const selectUser = createSelector(
+export const selectUser = createDraftSafeSelector(
 	selectSelf,
-	(state) => state.user?.value
+	(state) => state.user
 );
 
 export default userSlice.reducer;

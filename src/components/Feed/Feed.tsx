@@ -1,23 +1,43 @@
-import { FC, useRef, useState } from 'react';
+//* react
+import { FC, useRef } from 'react';
 
+//* react-query
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+
+//* redux
+import { useSelector } from 'react-redux';
+
+//* store
+import { selectUser } from '@/store/user/userSlice';
+
+//* components
+import InputOptionItem from '@/components/InputOptionItem/InputOptionItem';
+import Post from '@/components/Post/Post';
+import type { PostProps } from '@components/Post/Post';
+
+//* libs
+import FlipMove from 'react-flip-move';
+
+//* services
+import { addPost, fetchPosts } from '@/services/firebaseService';
+
+//* icons
 import CreateIcon from '@mui/icons-material/Create';
 import ImageIcon from '@mui/icons-material/Image';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 
+// * styles
 import styles from './Feed.module.scss';
 
-import InputOptionItem from '@/components/InputOptionItem/InputOptionItem';
-import Post from '@/components/Post/Post';
-
-import type { PostProps } from '@components/Post/Post';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { addPost, fetchPosts } from '@/services/firebaseService';
+// import
 
 interface FeedProps {}
 
-const Feed: FC<FeedProps> = ({}) => {
+const Feed: FC<FeedProps> = ({}, ref) => {
+	const user = useSelector(selectUser);
+
 	const queryClient = useQueryClient();
 	// const [posts, setPosts] = useState<[] | PostProps[]>([]);
 	const inputMessage = useRef(null);
@@ -67,8 +87,9 @@ const Feed: FC<FeedProps> = ({}) => {
 		}); */
 		mutation.mutate({
 			message: input.value,
-			username: 'shadow',
-			description: 'your shadow',
+			username: user?.user?.displayName,
+			description: user?.user?.email,
+			photoUrl: user?.user?.photoURL,
 			date: new Date().toLocaleDateString(),
 		});
 
@@ -107,16 +128,18 @@ const Feed: FC<FeedProps> = ({}) => {
 				</div>
 			</div>
 			{/* posts */}
-			{data.posts.length > 0 &&
-				data.posts.map((post) => (
-					<Post
-						key={post.postId}
-						username={post.username}
-						message={post.message}
-						description={post.description}
-						date={post.date}
-					/>
-				))}
+			<FlipMove>
+				{data.posts.length > 0 &&
+					data.posts.map((post) => (
+						<Post
+							key={post.postId}
+							username={post.username}
+							message={post.message}
+							description={post.description}
+							date={post.date}
+						/>
+					))}
+			</FlipMove>
 		</div>
 	);
 };

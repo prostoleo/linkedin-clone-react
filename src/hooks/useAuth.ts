@@ -11,6 +11,13 @@ import {
 	updateProfile,
 } from 'firebase/auth';
 
+export interface iLocalUser {
+	email: string;
+	uid: string;
+	displayName: string;
+	photoURL: string;
+}
+
 export default function useAuth() {
 	const user = useSelector((state: RootState) => state.user.user);
 	const dispatch = useDispatch();
