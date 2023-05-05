@@ -1,0 +1,46 @@
+.widgets {
+	position: sticky;
+
+	top: 80px;
+
+	height: fit-content;
+
+	padding-bottom: 0.75rem;
+
+	background-color: #fff;
+	border: 1px solid lightgray;
+	border-radius: 0.75rem;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.75rem;
+
+		h2 {
+			font-weight: 400;
+		}
+	}
+
+	&__article {
+		display: flex;
+		padding: 0.5rem;
+		cursor: pointer;
+
+		&Left {
+			color: var(--clr-primary);
+			margin-right: 0.5rem;
+		}
+
+		&:hover {
+			background-color: whitesmoke;
+			cursor: pointer;
+		}
+
+		&Left {
+		}
+
+		&Right {
+		}
+	}
+}

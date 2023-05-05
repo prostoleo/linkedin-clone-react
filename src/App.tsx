@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { auth } from '@/libs/firebase';
 import { login, logout } from './store/user/userSlice';
 import useAuth from '@/hooks/useAuth';
+import Widgets from './components/Widgets/Widgets';
 
 function App() {
 	// const user = useSelector(selectUser);
@@ -31,7 +32,7 @@ function App() {
 					{/* feed */}
 					<Feed />
 					{/* widgets */}
-					<div>widgets</div>
+					<Widgets />
 				</div>
 			)}
 		</div>
