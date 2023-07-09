@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 // const admin = await import('firebase-admin');
 // import admin from 'firebase-admin/';
 

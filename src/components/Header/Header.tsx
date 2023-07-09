@@ -18,7 +18,13 @@ const Header: FC<HeaderProps> = ({}) => {
 	return (
 		<header className={styles.header}>
 			<div className={styles.headerLeft}>
-				<img className={styles.headerLeftIcon} src="/linkedin-new.svg" alt="" />
+				<a href="/">
+					<img
+						className={styles.headerLeftIcon}
+						src="/linkedin-new.svg"
+						alt=""
+					/>
+				</a>
 
 				<div className={styles.headerSearch}>
 					{/* search icon */}
